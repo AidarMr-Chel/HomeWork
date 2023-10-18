@@ -46,6 +46,7 @@ namespace _7
         public static double methodSimpson(double a, double b, int n)
         {
             var h = (b - a) / n;
+            double xk2;
             double sum1 = 0, sum2 =0;
             for (var k = 1;k <= n;k++)
             {
@@ -54,7 +55,7 @@ namespace _7
                 {
                     sum1 += F(x1);
                 }
-                var xk2 = a + (k - 1) * h;
+                xk2 = a + (k - 1) * h;
                 sum2 += F((x1 + xk2) / 2);
             }
             return h / 3.0 * (1.0 / 2.0 * F(a) + sum1 + 2 * sum2 + 1.0 / 2.0 * F(b));
